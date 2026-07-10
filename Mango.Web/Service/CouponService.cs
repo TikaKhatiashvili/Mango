@@ -18,7 +18,7 @@ public class CouponService : ICouponService
 
     public async Task<ResponseDto?> DeleteCouponAsync(int id)
     {
-        return await _baseService.SendAsync(new RequestDto() { ApiType = SD.ApiType.DELETE, Url = SD.CouponAPIBase + "/api/coupon" + id });
+        return await _baseService.SendAsync(new RequestDto() { ApiType = SD.ApiType.DELETE, Url = SD.CouponAPIBase + "/api/coupon/" + id });
     }
 
     public async Task<ResponseDto?> GetAllCouponsAsync()

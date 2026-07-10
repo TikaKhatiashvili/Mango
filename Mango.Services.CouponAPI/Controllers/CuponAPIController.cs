@@ -118,11 +118,12 @@ public class CuponAPIController : ControllerBase
     }
 
     [HttpDelete]
+    [Route("{id:int}")] 
     public ResponseDto Delete(int id)
     {
         try
         {
-            Coupon obj = _db.Coupons.First(u => u.CouponId == id);
+            Coupon obj = _db.Coupons.FirstOrDefault(u => u.CouponId == id);
             _db.Coupons.Remove(obj);
             _db.SaveChanges();
         }
